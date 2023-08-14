@@ -8,10 +8,8 @@ public class Dashboard {
 
     Scanner read = new Scanner(System.in);
 
-    private Database database;
+    public Dashboard(){
 
-    public Dashboard(Database database){
-        this.database = database;
     }
 
     public void banner(){
@@ -35,12 +33,12 @@ public class Dashboard {
     }
 
     public void loginPage(){
-        Login login = new Login(database);
+        Login login = new Login();
         login.display();
     }
 
     public void registerPage(){
-        Register register = new Register(database);
+        Register register = new Register();
         register.userForm();
         display(0);
     }

@@ -6,10 +6,9 @@ import java.util.Scanner;
 public class Register{
     private User user = new User();
 
-    private Database database;
+    private Database database = Database.getInstance();
 
-    public Register(Database database){
-        this.database = database;
+    public Register(){
     }
 
     public void addUser(){

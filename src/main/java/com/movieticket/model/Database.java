@@ -2,12 +2,24 @@ package com.movieticket.model;
 
 import java.util.HashMap;
 
-public class Database{
+public class Database {
+
+    private static Database database = null;
 
     private HashMap<String,User> keyLoginId = new HashMap<>();
     private HashMap<String,User> keyEmailId = new HashMap<>();
 
-    public Database(){}
+    private Database(){}
+
+
+
+    // Getting Instance
+    public static Database getInstance(){
+        if(database == null){
+            database = new Database();
+        }
+        return database;
+    }
 
     public int addUser(User user){
         if(keyLoginId.containsKey(user.getLoginId()) || keyEmailId.containsKey(user.getEmailId())){

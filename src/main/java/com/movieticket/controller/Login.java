@@ -5,15 +5,14 @@ import java.util.Scanner;
 
 public class Login {
 
-    private Database database;
+    private Database database = Database.getInstance();
     private String username;
     private String pass;
     private User user;
 
     Scanner read = new Scanner(System.in);
 
-    public Login(Database database){
-        this.database = database;
+    public Login(){
     }
 
     public void display(){
